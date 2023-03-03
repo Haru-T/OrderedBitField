@@ -141,6 +141,10 @@ Just copy `include/OrderedBitField` directory into your project and include `Ord
 #include <OrderedBitField/OrderedBitField.hpp>
 ```
 
+## API Documentation
+
+You can generate the API documentation with CMake and Doxygen (CMake target: OrderedBitFieldDoc).
+
 ## License
 
 This library is dual-licensed under the Apache 2.0 and MIT terms.

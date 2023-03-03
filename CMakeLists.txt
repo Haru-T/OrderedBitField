@@ -52,3 +52,15 @@ if(ORDERED_BIT_FIELD_BUILD_TESTING)
 endif(ORDERED_BIT_FIELD_BUILD_TESTING)
 
 catch_discover_tests(OrderedBitFieldTest)
+
+# Documentation
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+  set(DOXYGEN_USE_MDFILE_AS_MAINPAGE ${CMAKE_CURRENT_SOURCE_DIR}/README.md)
+  set(DOXYGEN_PREDEFINED ORDERED_BIT_FIELD_REF_BY_STR=1
+                         __cpp_nontype_template_args=201911L)
+  doxygen_add_docs(OrderedBitFieldDoc
+    ${CMAKE_CURRENT_SOURCE_DIR}/README.md
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    COMMENT "generate doxygen document")
+endif(DOXYGEN_FOUND)

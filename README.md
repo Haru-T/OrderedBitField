@@ -1,6 +1,6 @@
 # OrderedBitField
 
-Ordered alternative to bit-fields in C++17/C++20
+Alternative to bit-fields with guaranteed field order and alignment for C++17/20
 
 ## Features
 
@@ -139,6 +139,46 @@ Just copy `include/OrderedBitField` directory into your project and include `Ord
 #define ORDERED_BIT_FIELD_DISALLOW_OVERSIZED_FIELD 1
 
 #include <OrderedBitField/OrderedBitField.hpp>
+```
+
+### CMake
+
+Requires CMake >= 3.12.
+
+```cmake
+find_package(OrderedBitField REQUIRED)
+# ...
+target_link_libraries(your_target OrderedBitField::OrderedBitField)
+
+# to enable options, set properties to your target
+set_target_properties(your_target PROPERTIES
+  ORDERED_BIT_FIELD_REF_BY_STR ON
+  ORDERED_BIT_FIELD_DISALLOW_OVERSIZED_FIELD ON)
+```
+
+Instead, clone this repository and add to your project by `add_subdirectory()`.
+
+```cmake
+add_subdirectory(path/to/OrderedBitField)
+
+target_link_libraries(your_target OrderedBitField::OrderedBitField)
+set_target_properties(your_target PROPERTIES
+  ORDERED_BIT_FIELD_REF_BY_STR ON)
+```
+
+You can also use `FetchContent`.
+
+```cmake
+include(FetchContent)
+FetchContent_Declare(
+  OrderedBitField
+  GIT_REPOSITORY https://github.com/Haru-T/OrderedBitField
+  GIT_TAG v0.1.0)
+FetchContent_MakeAvailable(OrderedBitField)
+
+target_link_libraries(your_target OrderedBitField::OrderedBitField)
+set_target_properties(your_target PROPERTIES
+  ORDERED_BIT_FIELD_REF_BY_STR ON)
 ```
 
 ## API Documentation

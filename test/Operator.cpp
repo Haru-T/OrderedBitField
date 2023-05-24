@@ -1,7 +1,7 @@
 //===-- test/Operator.cpp - Test for bit/arithmetic operators ---*- C++ -*-===//
 //
 // Under the Apache License v2.0 and MIT License.
-// SPDX-License-Idnetifier: Apache-2.0 OR MIT
+// SPDX-License-Identifier: Apache-2.0 OR MIT
 //
 //===----------------------------------------------------------------------===//
 ///
